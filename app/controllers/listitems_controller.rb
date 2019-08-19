@@ -2,17 +2,23 @@ class ListitemsController < ApplicationController
 
   def new
     @listitem = Listitem.new
+    @todolist =Todolist.find(params[:todolist_id])
   end
 
   def create
     @listitem = Listitem.new(listitem_params)
     @todolist = Todolist.find(params[:todolist_id])
-    @listitem.todolist_id = @todolist
+    @listitem.todolist = @todolist
+
     if @listitem.save
       redirect_to @todolist
     else
       render :new
     end
+  end
+
+  def show
+    @listitem = Listitems.find(params[:id])
   end
 
   def edit

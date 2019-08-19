@@ -1,6 +1,14 @@
 <p><%= @todolist.title%></p>
 <p><%= @todolist.description %></p>
 
+<% @todolist.listitems.each do |f| %>
+<%= f.title  %>
+<%= link_to "Supprimer cette tâche",  todolist_listitem_path(f), method: :delete, data: { confirm: "Etes vous sûr de vouloir supprimer cette tâche ?"} %>
+<% end %>
+
+
+
+<%= link_to "Ajouter une tâche",  new_todolist_listitem_path(@todolist) %>
 
 <%= link_to "Retour à l'index",  todolists_path %>
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :todolists do
-    resources :listitems, except:[:index, :show]
+    resources :listitems, except:[:index]
   end
 
   root "todolists#index"

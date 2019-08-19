@@ -1,0 +1,4 @@
+<%= simple_form_for [@todolist, @listitem] do |f| %>
+  <%= f.input :title %>
+  <%= f.submit "Ajouter à la liste", class: "btn btn-primary" %>
+<% end %>
