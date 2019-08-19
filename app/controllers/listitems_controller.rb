@@ -18,11 +18,11 @@ class ListitemsController < ApplicationController
   end
 
   def show
-    @listitem = Listitems.find(params[:id])
+    @listitem = Listitem.find(params[:id])
   end
 
   def edit
-    @listitem = Listitems.find(params[:id])
+    @listitem = Listitem.find(params[:id])
   end
 
   def update
@@ -34,6 +34,8 @@ class ListitemsController < ApplicationController
   end
 
   def destroy
+    @todolist = Todolist.find(params[:id])
+    @listitem = @todolist.listitems.find(params[:todolist_id])
     @listitem.destroy
     redirect_to @todolist
   end
