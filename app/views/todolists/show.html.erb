@@ -2,9 +2,10 @@
 <p><%= @todolist.description %></p>
 
 <% @todolist.listitems.each do |f| %>
-<%= f.title  %>
-<%= f.id  %>
-<%= link_to "Sauvegarder cette tâche",  complete_listitem_path(f), method: :put, data: { confirm: "Etes vous sûr de vouloir sauvegarder cette tâche ?"} %>
+  <% if f.status == false %>
+  <%= f.title  %>
+  <%= link_to "Sauvegarder cette tâche",  complete_listitem_path(f), method: :put, data: { confirm: "Etes vous sûr de vouloir sauvegarder cette tâche ?"} %>
+  <% end %>
 <% end %>
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_145134) do
+ActiveRecord::Schema.define(version: 2019_08_19_150444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_08_19_145134) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.boolean "status"
+    t.bigint "listitem_id"
+    t.index ["listitem_id"], name: "index_itemarchives_on_listitem_id"
   end
 
   create_table "listitems", force: :cascade do |t|
@@ -28,8 +30,6 @@ ActiveRecord::Schema.define(version: 2019_08_19_145134) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "todolist_id"
-    t.bigint "itemarchives_id"
-    t.index ["itemarchives_id"], name: "index_listitems_on_itemarchives_id"
     t.index ["todolist_id"], name: "index_listitems_on_todolist_id"
   end
 
@@ -52,6 +52,6 @@ ActiveRecord::Schema.define(version: 2019_08_19_145134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "listitems", "itemarchives", column: "itemarchives_id"
+  add_foreign_key "itemarchives", "listitems"
   add_foreign_key "listitems", "todolists"
 end

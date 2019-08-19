@@ -9,7 +9,7 @@ class ListitemsController < ApplicationController
     @listitem = Listitem.new(listitem_params)
     @todolist = Todolist.find(params[:todolist_id])
     @listitem.todolist = @todolist
-
+    @listitem.status = false
     if @listitem.save
       redirect_to @todolist
     else
@@ -40,15 +40,37 @@ class ListitemsController < ApplicationController
     redirect_to @todolist
   end
 
+  def complete?
+    @todolist = Todolist.find(params[:id])
+    @listitem = @todolist.listitems.find(params[:todolist_id])
+    return @listitem.status
+
+    # @todolist = Todolist.find(params[:id])
+    # @listitem = @todolist.listitems.find(params[:todolist_id])
+    # @listitem.update_attribute(:updated_at, Time.now)
+    # @itemarchive = Itemarchive.new(title: @listitem.title, status: @listitem.status)
+    # @itemarchive.listitem = @listitem
+    # if @itemarchive.save
+    #   Listitem.find(@listitem.id).destroy
+    #   redirect_to @todolist, notice: "Item archivé"
+    # else
+    #   redirect_to @todolist, notice: "Item non archivé"
+    # end
+
+    # redirect_to @todolist, notice: "Item achevé"
+  end
+
   def complete
     @todolist = Todolist.find(params[:id])
     @listitem = @todolist.listitems.find(params[:todolist_id])
-    @listitem.update_attribute(:updated_at, Time.now)
-    @itemarchive = Itemarchive.new()
-    @itemarchive = @listitem.itemarchive
-    raise
-    # redirect_to @todolist, notice: "Item achevé"
+    @listitem.status = true
+    if @listitem.save
+      redirect_to @todolist, notice: "Item archivé"
+    else
+      redirect_to @todolist, notice: "Item non archivé"
+    end
   end
+
 
   private
 
