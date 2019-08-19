@@ -4,7 +4,7 @@
 <% @todolist.listitems.each do |f| %>
 <%= f.title  %>
 <%= f.id  %>
-<%= link_to "Supprimer cette tâche",  todolist_listitem_path(f), method: :delete, data: { confirm: "Etes vous sûr de vouloir supprimer cette tâche ?"} %>
+<%= link_to "Sauvegarder cette tâche",  complete_listitem_path(f), method: :put, data: { confirm: "Etes vous sûr de vouloir sauvegarder cette tâche ?"} %>
 <% end %>
 
 
