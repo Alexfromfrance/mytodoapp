@@ -34,7 +34,11 @@ class TodolistsController < ApplicationController
 
   def destroy
     @todolist.destroy
-    redirect_to @todolists
+    if @todolists.nil?
+      redirect_to todolists_path
+    else
+      @todolists
+    end
   end
 
   private

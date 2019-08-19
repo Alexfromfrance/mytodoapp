@@ -1,0 +1,9 @@
+<p><%= @todolist.title%></p>
+<p><%= @todolist.description %></p>
+
+
+<%= link_to "Retour à l'index",  todolists_path %>
+
+<%= link_to "Modifier la liste",  edit_todolist_path %>
+
+<%= link_to "Supprimer cette liste",  todolist_path(@todolist), method: :delete, data: { confirm: "Etes vous sûr de vouloir supprimer cette liste ?"} %>
