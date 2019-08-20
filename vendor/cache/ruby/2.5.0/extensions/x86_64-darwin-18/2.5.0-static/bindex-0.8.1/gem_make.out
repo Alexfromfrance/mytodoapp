@@ -1,0 +1,15 @@
+current directory: /Users/alexandreauriol/code/mytodoapp/vendor/cache/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/alexandreauriol/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20190820-2240-26f9b2.rb extconf.rb
+creating Makefile
+
+current directory: /Users/alexandreauriol/code/mytodoapp/vendor/cache/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/alexandreauriol/code/mytodoapp/vendor/cache/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/alexandreauriol/code/mytodoapp/vendor/cache/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190820-2240-19bh0wx/skiptrace/internal
