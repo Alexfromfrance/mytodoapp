@@ -69,7 +69,13 @@ class ListitemsController < ApplicationController
     @listitem = @todolist.listitems.find(params[:todolist_id])
     @listitem.status = true
     if @listitem.save
-      redirect_to @todolist, notice: "Item archivé"
+      if @todolist.all_done?
+        mail = UserMailer.todoempty(current_user, @todolist)
+        mail.deliver_later
+        redirect_to @todolist, notice: "Item archivé"
+      else
+        redirect_to @todolist, notice: "it works"
+      end
     else
       redirect_to @todolist, notice: "Item non archivé"
     end

@@ -2,19 +2,18 @@ class TodolistsController < ApplicationController
   before_action :set_todolist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todolists = Todolist.all
+    @todolists = current_user.todolists
   end
 
   def show
   end
 
   def new
-    @todolist = Todolist.new
+    @todolist = current_user.todolists.build
   end
 
   def create
-    @todolist = Todolist.new(todolist_params)
-    if @todolist.save
+    if @todolist = current_user.todolists.create(todolist_params)
       redirect_to @todolist
     else
       render :new
@@ -48,7 +47,6 @@ class TodolistsController < ApplicationController
   end
 
   def set_todolist
-    @todolist = Todolist.find(params[:id])
+    @todolist = current_user.todolists.find(params[:id])
   end
-
 end
