@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: "todolists#index"
+
+  get 'taskdone', to: 'listitems#taskdone', as: :taskdone
 
   resources :todolists do
     resources :listitems, except:[:index]

@@ -21,6 +21,10 @@ class ListitemsController < ApplicationController
     @listitem = Listitem.find(params[:id])
   end
 
+  def taskdone
+    @listitems = Listitem.where(status: true)
+  end
+
   def edit
     @listitem = Listitem.find(params[:id])
   end
