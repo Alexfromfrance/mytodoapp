@@ -6,6 +6,7 @@ class TodolistsController < ApplicationController
   end
 
   def show
+    @user_todolist = UsersTodolist.new
   end
 
   def new

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :todolists do
     resources :listitems, except:[:index]
+    resources :users_todolists, only:[:create]
   end
 
   match 'todolists/:todolist_id/listitems/:id/complete' => 'listitems#complete', as: 'complete_listitem', via: :put

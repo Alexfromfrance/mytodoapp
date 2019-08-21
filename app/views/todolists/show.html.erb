@@ -8,6 +8,13 @@
   <% end %>
 <% end %>
 
+<%= simple_form_for [@todolist, @user_todolist] do |f| %>
+  <!-- [...] -->
+  <%= f.input :email, input_html: {value: ""} %>
+  <%= f.submit "Inviter un utilisateur" %>
+  <!-- [...] -->
+<% end %>
+
 <%= link_to "Ajouter une tâche",  new_todolist_listitem_path(@todolist) %>
 
 <%= link_to "Retour à l'index",  todolists_path %>
