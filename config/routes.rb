@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "todolists#index"
 
   get 'taskdone', to: 'listitems#taskdone', as: :taskdone
+  get 'adminshow', to: 'listitems#adminshow', as: :adminshow
 
   resources :todolists do
     resources :listitems, except:[:index]

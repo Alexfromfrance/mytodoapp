@@ -1,0 +1,9 @@
+<% if current_user.status == "admin" %>
+<% @todolists.each do |f|%>
+<p><%= f.title %></p>
+<% end %>
+
+
+<p><%= @todolists.count %></p>
+<p><%= @users.count %></p>
+<% end %>

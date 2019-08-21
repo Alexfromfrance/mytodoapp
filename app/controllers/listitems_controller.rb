@@ -17,6 +17,11 @@ class ListitemsController < ApplicationController
     end
   end
 
+  def adminshow
+    @todolists = Todolist.all
+    @users = User.all
+  end
+
   def show
     @listitem = Listitem.find(params[:id])
   end
