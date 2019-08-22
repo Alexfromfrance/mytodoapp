@@ -18,8 +18,12 @@ class ListitemsController < ApplicationController
   end
 
   def adminshow
+    if current_user.status == "admin"
     @todolists = Todolist.all
     @users = User.all
+    else
+      redirect_to todolists_path
+    end
   end
 
   def show

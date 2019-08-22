@@ -1,0 +1,18 @@
+.index_row {
+  height: auto;
+  margin: 20px auto !important;
+  text-align: center;
+  border-radius: 12px;
+  background-color: white;
+  color: red;
+  background-size: 100%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  overflow: hidden;
+  text-decoration: none;
+  a {
+    color: red;
+    vertical-align: middle;
+  }
+}
