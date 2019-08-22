@@ -16,8 +16,7 @@ module Mytodoapp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-    config.action_mailer.delivery_method = :postmark
-config.action_mailer.postmark_settings = { :api_token => "ac96f273-c0b9-4112-a265-75fc47ddaef8" }
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
