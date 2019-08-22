@@ -2,5 +2,9 @@
 
 <p>
   <%= @user.email %>
-  Votre tâche <%= @todolist.title %> est terminée.
+  Votre tâche "<%= @todolist.title %>" est terminée.
+  <br>
+  <br>
+  <%= link_to "Voir vos listes", todolists_url(@todolists) %>
 </p>
+
