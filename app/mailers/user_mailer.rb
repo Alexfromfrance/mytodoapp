@@ -8,7 +8,8 @@ class UserMailer < ApplicationMailer
   def todoempty(user, todolist)
     @user = user
     @todolist = todolist
-    mail(to: @user.email, subject: `Vous êtes un Boss`)
+    mail(to: user.email, subject: `Vous êtes un Boss`)
   end
+
 end
 
