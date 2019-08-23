@@ -81,12 +81,12 @@ class ListitemsController < ApplicationController
       if @todolist.all_done?
         mail = UserMailer.todoempty(current_user, @todolist)
         mail.deliver_later
-        redirect_to @todolist, notice: "Item archivé"
+        redirect_to todolist_path(@todolist), notice: "Item archivé"
       else
-        redirect_to @todolist, notice: "it works"
+        redirect_to todolist_path(@todolist), notice: "it works"
       end
     else
-      redirect_to @todolist, notice: "Item non archivé"
+      redirect_to todolist_path(@todolist), notice: "Item non archivé"
     end
   end
 
