@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :users_todolists
+  has_many :users_todolists, dependent: :destroy
   has_many :todolists, through: :users_todolists
   has_many :listitems, through: :todolists, class_name: 'Listitem', source: :listitems
 
