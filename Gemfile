@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'pg_search', '~> 2.3.0'
 
 
 group :development do

@@ -8,9 +8,9 @@
 
 Todolist.destroy_all
 User.destroy_all
-Users_todolist.destroy_all
+UsersTodolist.destroy_all
 
 
-User.create!(id: 1, email: 'auriol.auriol.alexandre@gmail.com', status: "admin")
-User.create!(id: 2, email: 'toto.@gmail.com')
+User.create!(id: 1, email: 'auriol.alexandre@gmail.com', status: "admin", password:"123456")
+User.create!(id: 2, email: 'toto@gmail.com', password:"123456")
 puts 'Finished!'

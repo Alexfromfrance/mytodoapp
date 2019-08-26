@@ -1,9 +1,14 @@
  <%# if current_user.status == "admin" %>
+    <div class="adminshow">
+    <h1>Nom des todo lists</h1>
   <% @todolists.each do |f|%>
     <p><%= f.title %></p>
   <% end %>
+  <h1>Nombre de todo lists</h1>
     <p><%= @todolists.count %></p>
+  <h1>Nombre d'utilisteurs</h1>
     <p><%= @users.count %></p>
+    </div>
 <%# else %>
 <%# redirect_to todolists_path, notice: "avez pas accès à ces informations" %>
 <%# end %>

@@ -1,8 +1,15 @@
-<% @listitems.each do |f| %>
+<div class="taskdone">
 
-  <% if f.status == true %>
-  <%= f.title  %>
-  <%= f.updated_at %>
-  <% end %>
-<% end %>
-<%= link_to "Retour à l'index",  todolists_path %>
+  <h1>Mes tâches effectuées</h1>
+  <% @listitems.last(10).each do |f| %>
+  <div class="taskdone_iteration">
+    <% if f.status == true %>
+    <%= f.title  %>
+    <%= f.updated_at %>
+    <% end %>
+    <% end %>
+    <br>
+    <i class="fas fa-hand-point-left">
+      <%= link_to "Retour à l'index",  todolists_path %></i><br>
+    </div>
+  </div>

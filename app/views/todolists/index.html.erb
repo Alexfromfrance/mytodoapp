@@ -1,13 +1,29 @@
-<h1>Todo list</h1>
 
-<% @todolists.each do |todo|  %>
-<div class="index_row">
+
+<div class="bloc">
+
+  <div class="todolist_title">
+  <h1>Mes Todo lists</h1>
+  </div>
+
+  <% @todolists.each do |todo| %>
+  <div class="index_row">
   <p><%= link_to todo.title, todolist_path(todo) %></p>
+  </div>
+  <% end %>
+
+    <div class="create_list">
+    <i class="fas fa-plus-square">
+      <%= link_to "Créer une nouvelle liste",  new_todolist_path %>
+    </i>
+    </div>
+
+  <div class="admin_access">
+  <% if current_user.status == "admin" %>
+  <i class="fas fa-sign-out-alt">
+    <%= link_to "Page admin", adminshow_path  %>
+  <% end %>
+  </i>
+  </div>
+
 </div>
-<% end %>
-
-<% if current_user.status == "admin" %>
-<p><%= link_to "Page admin", adminshow_path  %></p>
-<% end %>
-
-<%= link_to "Créer une nouvelle liste",  new_todolist_path %>

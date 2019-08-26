@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :users_todolists, only:[:create]
   end
 
+resources :listitems, only: [:index]
+
+
   match 'todolists/:todolist_id/listitems/:id/complete' => 'listitems#complete', as: 'complete_listitem', via: :put
 
   root "todolists#index"

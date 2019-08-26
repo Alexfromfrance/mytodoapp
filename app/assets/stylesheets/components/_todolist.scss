@@ -1,18 +1,88 @@
 .index_row {
   height: auto;
-  margin: 20px auto !important;
-  text-align: center;
-  border-radius: 12px;
-  background-color: white;
-  color: red;
-  background-size: 100%;
-  position: relative;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  overflow: hidden;
+  width: auto;
+  font-size: 24px;
   text-decoration: none;
+  font-family: 'Dancing Script', cursive;
   a {
-    color: red;
-    vertical-align: middle;
+    color: black;
+    text-decoration: none;
+    vertical-align: left;
+    padding: 3px;
+    font-family: 'Gochi Hand', cursive;
   }
+  :hover {
+    text-decoration: none !important;
+    color: grey!important;
+  }
+}
+
+.bloc {
+  position: absolute;
+  top: 15%;
+  left: 32%;
+  height: 90vh;
+  width: 90vh;
+  margin: auto;
+  padding: 10px;
+  border-radius: 4px;
+  color: black;
+  .todolist_title {
+    margin-left:33%;
+    margin-bottom: 15px;
+    font-size:40px;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.create_list {
+  font-size: 24px;
+  color: black !important;
+  margin-left: 0 !important;
+  margin-top: 25px !important;
+  a {
+  color: black !important;
+  margin-left: 0 !important;
+  font-family: 'Roboto', sans-serif;
+  &:hover {
+  text-decoration: none !important;
+  color: grey!important;
+  }
+}
+}
+
+.admin_access {
+  font-size: 24px;
+  color: black !important;
+  margin-left: 0 !important;
+  a {
+  color: black !important;
+  margin-left: 0 !important;
+  font-family: 'Roboto', sans-serif;
+  &:hover {
+  text-decoration: none !important;
+  color: grey!important;
+  }
+}
+}
+
+.fas a {
+  color:black;
+  font-family: 'Roboto', sans-serif, !important;
+  font-weight : bolder !important;
+  &:hover {
+    color:grey;
+    text-decoration: none;
+}
+}
+
+.fa-save a {
+  color: black;
+  font-family: 'Roboto', sans-serif, !important;
+  font-weight : bolder !important;
+  &:hover {
+    color:grey;
+    text-decoration: none;
+}
 }

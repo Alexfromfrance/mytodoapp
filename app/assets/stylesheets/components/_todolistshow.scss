@@ -1,0 +1,41 @@
+.form-control {
+  width: 20% !important;
+}
+
+.bloc {
+  position: absolute;
+  top: 15%;
+  left: 34%;
+  height: 90vh;
+  width: 90vh;
+  margin: auto;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Gochi Hand', cursive;
+  .todolist_title {
+    margin-left:24%;
+    margin-bottom: 15px;
+    font-size:40px;
+    color: black;
+    text-decoration: none;
+  }
+}
+.todolist_description {
+    font-family: 'Gochi Hand', cursive;
+    h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size:24px;
+    text-decoration:underline;
+    }
+  }
+
+.flex_todolist {
+  display:flex;
+  justify-content: space-between;
+}
+
+.flex_todoiteration {
+  display: flex;
+  flex-wrap: wrap;
+}
+

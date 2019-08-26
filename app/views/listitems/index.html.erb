@@ -1,0 +1,26 @@
+
+
+<div class="listitems">
+  <h1>Toutes mes tâches</h1>
+
+  <%= form_tag listitems_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+    placeholder: "Trouver une tâche"
+    %>
+    <br>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+    <ul>
+      <% @listitems.each do |f| %>
+      <li class="listitems_iteration">
+        <%= f.title %>
+      </li>
+      <% end %>
+    </ul>
+    <br>
+
+  </div>
+
+

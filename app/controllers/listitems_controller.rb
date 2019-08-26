@@ -1,5 +1,12 @@
 class ListitemsController < ApplicationController
 
+  def index
+    @listitems = current_user.get_items
+    if params[:query].present?
+      @listitems = current_user.listitems.search_by_title(params[:query])
+    end
+  end
+
   def new
     @listitem = Listitem.new
     @todolist = Todolist.find(params[:todolist_id])
