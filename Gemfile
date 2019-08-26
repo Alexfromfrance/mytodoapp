@@ -18,6 +18,8 @@ gem 'webpacker'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 gem 'pg_search', '~> 2.3.0'
+# gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 
 group :development do

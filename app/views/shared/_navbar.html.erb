@@ -21,6 +21,11 @@
         <li>
           <%= link_to "Toutes mes tâches", listitems_path, class: "nav-link" %>
         </li>
+        <% if current_user.status == "admin" %>
+        <li>
+          <%= link_to "Admin", rails_admin_path, class: "nav-link", target: '_blank' %>
+        </li>
+        <% end %>
         </div>
         <li class="nav-item dropdown">
           <%= image_tag 'sign-out-alt-solid.svg' , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
