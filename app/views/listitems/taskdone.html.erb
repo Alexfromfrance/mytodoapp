@@ -6,7 +6,7 @@
     <% if f.status == true %>
     <i class="fas fa-check"></i>
     <%= f.title %>  >>
-    <%= f.updated_at.strftime("Tâche effectuée le %d-%m-%Y à %H:%M") %>
+    <%= f.updated_at.localtime.strftime("Tâche effectuée le %d-%m-%Y à %H:%M") %>
     <% end %>
     <% end %>
     <br>
