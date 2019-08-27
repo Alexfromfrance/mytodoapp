@@ -4,10 +4,11 @@
   <% @listitems.last(10).each do |f| %>
   <div class="taskdone_iteration">
     <% if f.status == true %>
-    <%= f.title  %>
-    <%= f.updated_at %>
+    <i class="fas fa-check"></i>
+    <%= f.title %>  >>
+    <%= f.updated_at.strftime("Tâche effectuée le %d-%m-%Y à %H:%M") %>
     <% end %>
     <% end %>
     <br>
-    </div>
   </div>
+</div>

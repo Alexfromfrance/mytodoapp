@@ -12,41 +12,41 @@
   </div>
 
 
-      <% @todolist.listitems.each do |f| %>
+  <% @todolist.listitems.each do |f| %>
   <div class="flex_todolist">
     <div>
       <% if f.status == false %>
       <%= f.title  %>
     </div>
     <div class="fas fa-check">
-        <%= link_to "Tâche terminée",  complete_listitem_path(f), method: :put, data: { confirm: "Etes vous sûr de vouloir sauvegarder cette tâche ?"} %>
-        <% end %>
+      <%= link_to "Tâche terminée",  complete_listitem_path(f), method: :put, data: { confirm: "Etes vous sûr de vouloir sauvegarder cette tâche ?"} %>
+      <% end %>
     </div>
   </div>
-        <% end %>
+  <% end %>
   <br>
 
   <i class="fas fa-plus-square">
     <%= link_to "Ajouter une tâche",  new_todolist_listitem_path(@todolist) %>
   </i><br>
-   <i class="fas fa-pen">
+  <i class="fas fa-pen">
     <%= link_to "Modifier la liste",  edit_todolist_path %>
   </i><br>
-    <i class="fas fa-trash-alt">
+  <i class="fas fa-trash-alt">
     <%= link_to "Supprimer cette liste",  todolist_path(@todolist), method: :delete, data: { confirm: "Etes vous sûr de vouloir supprimer cette liste ?"} %>
   </i><br>
   <i class="fas fa-hand-point-left">
     <%= link_to "Retour à l'index",  todolists_path %></i><br>
 
- <i class="far fa-save">
-    <%= link_to "Afficher les tâches éffectuées",  taskdone_path %></i><br>
+    <i class="far fa-save">
+      <%= link_to "Afficher les tâches éffectuées",  taskdone_path %></i><br>
 
 
-  <%= simple_form_for [@todolist, @user_todolist] do |f| %>
-  <!-- [...] -->
-  <%= f.input :email, input_html: {value: ""}, label: false, placeholder: "Entrez son mail" %>
-  <%= f.submit "Inviter un utilisateur", class: "btn btn-primary" %>
-  <!-- [...] -->
-  <% end %>
-</div>
+      <%= simple_form_for [@todolist, @user_todolist] do |f| %>
+      <!-- [...] -->
+      <%= f.input :email, input_html: {value: ""}, label: false, placeholder: "Entrez son mail" %>
+      <%= f.submit "Inviter un utilisateur", class: "btn btn-primary" %>
+      <!-- [...] -->
+      <% end %>
+    </div>
 

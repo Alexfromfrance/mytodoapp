@@ -1,7 +1,8 @@
+<div class=title_create_todo>
 <h1>Créer une nouvelle Todo</h1>
-
+</div>
 <%= simple_form_for [@todolist] do |f| %>
   <%= f.input :title %>
-  <%= f.input :description %>
+  <%= f.input :description, label:"Rappel important" %>
   <%= f.submit "Ajouter une todo list", class: "btn btn-primary" %>
 <% end %>
